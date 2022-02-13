@@ -2,7 +2,9 @@ const {
   initWasm,
   checkWebAssembly,
   rpxToRealPx,
-  showCodeResult
+  showCodeResult,
+  shareHome,
+  shareTimeline
 } = require('../../utils/util.js')
 
 const Options = require('../../utils/options.js')
@@ -14,6 +16,8 @@ const history = History.getInstance()
 const app = getApp()
 
 Page({
+  onShareAppMessage: shareHome,
+  onShareTimeline: shareTimeline,
   data: {
     textInput: '',
     margin: options.getMargin(),

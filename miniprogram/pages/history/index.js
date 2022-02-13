@@ -1,6 +1,8 @@
 const {
   showCodeResult,
-  formatTime
+  formatTime,
+  shareHome,
+  shareTimeline
 } = require('../../utils/util.js')
 
 const oid = require('../../utils/oid.js')
@@ -9,6 +11,8 @@ const History = require('../../utils/history.js')
 const history = History.getInstance()
 
 Page({
+  onShareAppMessage: shareHome,
+  onShareTimeline: shareTimeline,
   data: {
     history: []
   },

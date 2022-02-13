@@ -154,6 +154,16 @@ function formatTime (d) {
   return `${year}年${month}月${date}日 ${('00' + h).slice(-2)}:${('00' + m).slice(-2)}:${('00' + s).slice(-2)}`
 }
 
+function shareHome () {
+  return {
+    path: '/pages/index/index'
+  }
+}
+
+function shareTimeline () {
+  return {}
+}
+
 exports.toRealPx = toRealPx
 exports.rpxToRealPx = rpxToRealPx
 exports.getCanvas = getCanvas
@@ -162,3 +172,5 @@ exports.getWasmModule = getWasmModule
 exports.checkWebAssembly = checkWebAssembly
 exports.showCodeResult = showCodeResult
 exports.formatTime = formatTime
+exports.shareHome = shareHome
+exports.shareTimeline = shareTimeline

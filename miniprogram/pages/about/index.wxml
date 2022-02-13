@@ -1,5 +1,5 @@
 <view class="container about">
   <text>本小程序的代码开源在 Github 仓库</text>
   <text user-select="{{true}}">https://github.com/toyobayashi/mp-qrcode-helper</text>
-  <text>v1.0.0</text>
+  <text>v1.0.1</text>
 </view>

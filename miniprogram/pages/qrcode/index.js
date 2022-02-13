@@ -1,7 +1,8 @@
 const {
   getCanvas,
   rpxToRealPx,
-  showCodeResult
+  showCodeResult,
+  shareHome
 } = require('../../utils/util.js')
 
 const Options = require('../../utils/options.js')
@@ -9,6 +10,7 @@ const Options = require('../../utils/options.js')
 const options = Options.getInstance()
 
 Page({
+  onShareAppMessage: shareHome,
   data: {
     qrcodeResult: '',
     size: options.getSize(),
