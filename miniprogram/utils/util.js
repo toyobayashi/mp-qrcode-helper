@@ -139,6 +139,21 @@ function showCodeResult (content, title = '扫码结果') {
   })
 }
 
+/**
+ * @param {Date} d
+ * @returns {string}
+ */
+function formatTime (d) {
+  const year = d.getFullYear()
+  const month = d.getMonth() + 1
+  const date = d.getDate()
+  const h = d.getHours()
+  const m = d.getMinutes()
+  const s = d.getSeconds()
+
+  return `${year}年${month}月${date}日 ${('00' + h).slice(-2)}:${('00' + m).slice(-2)}:${('00' + s).slice(-2)}`
+}
+
 exports.toRealPx = toRealPx
 exports.rpxToRealPx = rpxToRealPx
 exports.getCanvas = getCanvas
@@ -146,3 +161,4 @@ exports.initWasm = initWasm
 exports.getWasmModule = getWasmModule
 exports.checkWebAssembly = checkWebAssembly
 exports.showCodeResult = showCodeResult
+exports.formatTime = formatTime

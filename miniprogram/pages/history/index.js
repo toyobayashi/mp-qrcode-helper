@@ -1,5 +1,6 @@
 const {
-  showCodeResult
+  showCodeResult,
+  formatTime
 } = require('../../utils/util.js')
 
 const oid = require('../../utils/oid.js')
@@ -25,7 +26,7 @@ Page({
   },
   showDetail (e) {
     const item = e.target.dataset.item
-    showCodeResult(item.content, new Date(oid.getTimestamp(item.id) * 1000).toLocaleString())
+    showCodeResult(item.content, formatTime(new Date(oid.getTimestamp(item.id) * 1000)))
   },
   copyItem (e) {
     const item = e.target.dataset.item
