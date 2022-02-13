@@ -592,7 +592,7 @@ function createWasm() {
     receiveInstance(result["instance"]);
   }
   function instantiateArrayBuffer(receiver) {
-    return (typeof wx !== "undefined" ? Promise.resolve(wasmBinaryFile) : getBinaryPromise()).then(function(binary) {
+    return (typeof WXWebAssembly !== "undefined" ? Promise.resolve(wasmBinaryFile) : getBinaryPromise()).then(function(binary) {
       return _WebAssembly.instantiate(binary, info);
     }).then(function(instance) {
       return instance;

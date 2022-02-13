@@ -90,7 +90,7 @@ WebAssembly 在微信小程序中的实践。
 
     ```js
     function instantiateArrayBuffer(receiver) {
-      return (typeof wx !== "undefined"
+      return (typeof WXWebAssembly !== "undefined"
         ? Promise.resolve(wasmBinaryFile)
         : getBinaryPromise()
       ).then(function(binary) {

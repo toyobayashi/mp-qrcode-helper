@@ -11,6 +11,6 @@ let code = fs.readFileSync(js, 'utf8')
 code = code.replace(/WebAssembly/g, '_WebAssembly')
 code = code.replace(/var ENVIRONMENT_IS_WEB = typeof window === "object";/g, fs.readFileSync(path.join(__dirname, './webassembly-polyfill.js'), 'utf8') +
   'var ENVIRONMENT_IS_WEB = typeof window === "object" || typeof wx === "object";')
-code = code.replace(/return getBinaryPromise\(\)/g, 'return (typeof wx !== "undefined" ? Promise.resolve(wasmBinaryFile) : getBinaryPromise())')
+code = code.replace(/return getBinaryPromise\(\)/g, 'return (typeof WXWebAssembly !== "undefined" ? Promise.resolve(wasmBinaryFile) : getBinaryPromise())')
 
 fs.writeFileSync(js, code, 'utf8')
