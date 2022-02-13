@@ -1,0 +1,16 @@
+.qrcode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrcode .canvas-wrapper {
+  margin: 160rpx 0 64rpx 0;
+  border: 2rpx solid #aaa;
+  box-shadow: 0 0 8rpx #aaa;
+  display: inline-block;
+}
+
+.qrcode .btn {
+  margin-bottom: 32rpx;
+}

@@ -1,0 +1,17 @@
+<wxs src="./../../utils/filter.wxs" module="filter" />
+
+<view class="container history">
+  <block wx:if="{{history.length > 0}}">
+    <view class="record" wx:for="{{history}}" wx:key="id">
+      <view class="type">{{filter.typeString(item.type)}}</view>
+      <view class="content">{{item.content}}</view>
+      <view class="select" data-item="{{item}}" bind:tap="showDetail">查看</view>
+      <view class="copy" data-item="{{item}}" bind:tap="copyItem">复制</view>
+      <view class="remove" data-item="{{item}}" bind:tap="removeItem">删除</view>
+    </view>
+    <button type="primary" bind:tap="clear">清除所有记录</button>
+  </block>
+  <block wx:else>
+    <view class="tip">暂无历史操作记录</view>
+  </block>
+</view>

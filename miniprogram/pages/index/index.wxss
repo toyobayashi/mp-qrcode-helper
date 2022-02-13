@@ -1,0 +1,77 @@
+.index {
+  padding: 32rpx;
+}
+
+.index .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+
+.index .read-btn {
+  text-decoration: underline;
+  color: #07C160;
+  font-size: 30rpx;
+}
+
+.index .btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+
+.index .btn-group .btn {
+  flex: 1;
+}
+
+.index .btn-group .btn.clear {
+  margin-right: 32rpx;
+}
+
+.index .title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.index .canvas-wrapper {
+  /* width: 376rpx;
+  margin: 32rpx auto; */
+  border: 2rpx solid #aaa;
+  box-shadow: 0 0 8rpx #aaa;
+  display: inline-block;
+}
+
+.index .textarea {
+  background-color: #fff;
+  width: 100%;
+  height: 200rpx;
+  border: 2rpx solid #aaa;
+  border-radius: 8rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  line-height: 48rpx;
+  font-size: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.index .option-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.index .option-line .label {
+  width: 100rpx;
+}
+
+.index .option-line .slider {
+  flex: 1;
+  padding-left: 16rpx;
+}
+
+.index .option-line .value {
+  width: 100rpx;
+  text-align: center;
+}

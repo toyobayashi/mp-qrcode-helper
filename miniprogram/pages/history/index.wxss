@@ -1,0 +1,29 @@
+.history .record {
+  display: flex;
+  align-items: center;
+  margin: 16rpx 16rpx;
+}
+
+.type, .select, .copy, .remove {
+  flex: 1;
+  text-align: center;
+}
+
+.content {
+  flex: 5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.select, .copy, .remove {
+  text-decoration: underline;
+  color: #07C160;
+  font-size: 30rpx;
+}
+
+.tip {
+  margin-top: 32rpx;
+  text-align: center;
+  color: #aaa;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "mp-qrcode-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "node ./script/clean.js",
+    "cmake:win": "emcmake cmake -DCMAKE_BUILD_TYPE=Release -G \"MinGW Makefiles\" -DCMAKE_MAKE_PROGRAM=make -DBUILD_SHARED_LIBS=OFF -H. -Bbuild",
+    "cmake:unix": "emcmake cmake -DCMAKE_BUILD_TYPE=Release -G \"Unix Makefiles\" -DCMAKE_MAKE_PROGRAM=make -DBUILD_SHARED_LIBS=OFF -H. -Bbuild",
+    "cmake:build": "cmake --build build",
+    "test": "node ./test/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tybys/emwrap": "^2.1.1"
+  }
+}

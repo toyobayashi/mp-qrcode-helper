@@ -1,0 +1,34 @@
+{
+  "env": {
+    "includePath": [
+      "${default}",
+      "${workspaceFolder}/deps/zxing-cpp/core/src"
+    ],
+    "defines": []
+  },
+  "configurations": [
+    {
+      "name": "Emscripten",
+      "defines": ["${defines}"],
+      "compilerPath": "${env:EMSDK}/upstream/emscripten/emcc",
+      "intelliSenseMode": "clang-x86",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "includePath": [
+        "${includePath}"
+      ]
+    },
+    {
+      "name": "Emscripten (Win32)",
+      "defines": ["${defines}"],
+      "compilerPath": "${env:EMSDK}/upstream/emscripten/emcc.bat",
+      "intelliSenseMode": "clang-x86",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "includePath": [
+        "${includePath}"
+      ]
+    }
+  ],
+  "version": 4
+}

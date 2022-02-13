@@ -1,0 +1,8 @@
+<view class="container qrcode">
+  <view class="canvas-wrapper" bind:tap="showResult">
+    <canvas type="2d" id="myCanvas" style="width:{{size}}rpx;height:{{size}}rpx;"></canvas>
+  </view>
+
+  <button wx:if="{{qrcodeResult}}" class="btn" type="primary" bind:tap="saveQRCode">保存到本地</button>
+  <button wx:if="{{qrcodeResult}}" type="default" class="btn btn-default" bind:tap="backHome">返回</button>
+</view>

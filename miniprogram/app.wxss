@@ -1,0 +1,15 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #F1F3F9;
+  overflow: auto;
+}
+
+.container.safe {
+  padding-bottom: 60rpx;
+}
+
+.btn-default {
+  border: 2rpx solid #07C160;
+}

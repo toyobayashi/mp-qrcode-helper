@@ -1,0 +1,4 @@
+<view class="container about">
+  <text user-select="{{true}}">https://github.com/toyobayashi/mp-qrcode-helper</text>
+  <text>v1.0.0</text>
+</view>

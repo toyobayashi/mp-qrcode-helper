@@ -1,0 +1,13 @@
+function typeString (type) {
+  if (type === 0) {
+    return "识别"
+  }
+  if (type === 1) {
+    return "生成"
+  }
+  return ""
+}
+
+module.exports = {
+  typeString: typeString
+}

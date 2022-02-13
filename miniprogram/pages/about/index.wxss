@@ -1,0 +1,11 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about text {
+  margin: 16rpx auto;
+  font-size: 28rpx;
+}

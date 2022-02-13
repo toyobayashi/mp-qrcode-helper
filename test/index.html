@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+<body>
+  <canvas width="300" height="300" id="canvas"></canvas>
+  <script src="../miniprogram/lib/zxingwasm.js"></script>
+  <script type="module">
+    const canvas = document.getElementById('canvas')
+    const wasmPromise = zxingwasm.default({
+      // locateFile: () => '111.wasm'
+    })
+    let zxingwasm_generate
+
+    function generateQRCode (Module, text) {
+      if (!zxingwasm_generate) {
+        zxingwasm_generate = Module.cwrap('zxingwasm_generate', 'number', [
+          'string',
+          'string',
+          'string',
+          'number',
+          'number',
+          'number',
+          'number'
+        ])
+      }
+
+      const canvas = document.getElementById('canvas')
+      const matrix = zxingwasm_generate(text, 'QRCode', 'UTF8', 10, canvas.width, canvas.height, -1)
+      if (!matrix) {
+        const errmsg = Module.UTF8ToString(Module._zxingwasm_get_last_error_msg())
+        window.alert(errmsg)
+        return
+      }
+      const dataPtr = Module._zxingwasm_get_matrix_data(matrix)
+      const dataSize = Module._zxingwasm_get_matrix_size(matrix)
+      console.log(Module._zxingwasm_get_matrix_width(matrix), Module._zxingwasm_get_matrix_height(matrix), dataPtr, dataSize)
+      const buffer = new Uint8Array(Module.HEAPU8.buffer, dataPtr, dataSize)
+      const ctx = canvas.getContext('2d')
+      const imageData = ctx.createImageData(canvas.width, canvas.height)
+      const pixelSize = canvas.width * canvas.height
+      for (let i = 0; i < pixelSize; i++) {
+        imageData.data.set([buffer[i], buffer[i], buffer[i], 255], i * 4)
+      }
+      ctx.putImageData(imageData, 0, 0)
+      Module._zxingwasm_free_matrix(matrix)
+    }
+
+    wasmPromise.then(({ Module }) => {
+      console.log(Module)
+      generateQRCode(Module, '扫码发大财')
+    })
+  </script>
+</body>
+</html>

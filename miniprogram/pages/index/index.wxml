@@ -1,0 +1,39 @@
+<view class="container index">
+  
+  <view class="title-wrapper">
+    <text class="title">请输入文本生成二维码</text>
+    <text class="read-btn" bind:tap="readQRCode">扫一扫识别二维码</text>
+  </view>
+
+  <view class="input-wrapper">
+    <textarea class="textarea" value=
+    "{{textInput}}" placeholder="请输入文本" bind:input="onInput"></textarea>
+    <view class="btn-group">
+      <button type="default" class="btn clear btn-default" bind:tap="clearInput">清空文本</button>
+      <button type="primary" class="btn" bind:tap="generateQRCode">生成二维码</button>
+    </view>
+  </view>
+
+  <view class="title-wrapper">
+    <text class="title">设置</text>
+  </view>
+
+  <view>
+    <view class="option-line">
+      <view class="label">外边距</view>
+      <slider class="slider" bindchange="marginChange" value="{{margin}}" step="1" max="20" />
+      <view class="value">{{margin}}</view>
+    </view>
+    <view class="option-line">
+      <view class="label">尺寸</view>
+      <slider class="slider" bindchange="sizeChange" value="{{size}}" step="1" min="320" max="750" />
+      <view class="value">{{size}}</view>
+    </view>
+    <view class="option-line">
+      <view class="label">纠错</view>
+      <slider class="slider" bindchange="eccLevelChange" value="{{eccLevel}}" step="1" max="8" />
+      <view class="value">{{eccLevel}}</view>
+    </view>
+    <button type="primary" bind:tap="setDefault">恢复默认设置</button>
+  </view>
+</view>
