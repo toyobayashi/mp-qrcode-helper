@@ -4,7 +4,8 @@ const {
   rpxToRealPx,
   showCodeResult,
   shareHome,
-  shareTimeline
+  shareTimeline,
+  systemInfo
 } = require('../../utils/util.js')
 
 const Options = require('../../utils/options.js')
@@ -52,6 +53,14 @@ Page({
     })
   },
   generateQRCode (e) {
+    if (systemInfo.platform === 'windows' || systemInfo.platform === 'mac') {
+      wx.showModal({
+        title: '提示',
+        content: 'PC端暂不支持生成二维码功能，请使用移动端访问',
+        showCancel: false
+      })
+      return
+    }
     if (!checkWebAssembly()) return
     if (!this.data.textInput) {
       wx.showModal({

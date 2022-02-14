@@ -127,10 +127,11 @@ function showCodeResult (content, title = '扫码结果') {
   wx.showModal({
     title,
     content,
-    cancelText: '复制',
-    cancelColor: '#07C160',
+    confirmText: '复制',
+    confirmColor: '#07C160',
+    cancelText: '确定',
     success: (res) => {
-      if (res.cancel) {
+      if (res.confirm) {
         wx.setClipboardData({
           data: content
         })
@@ -174,3 +175,4 @@ exports.showCodeResult = showCodeResult
 exports.formatTime = formatTime
 exports.shareHome = shareHome
 exports.shareTimeline = shareTimeline
+exports.systemInfo = systemInfo

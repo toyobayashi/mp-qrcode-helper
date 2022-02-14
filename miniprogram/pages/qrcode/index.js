@@ -22,8 +22,7 @@ Page({
       const input = data.input
       this.setData({
         size: data.size
-      })
-      setTimeout(() => {
+      }, () => {
         const size = rpxToRealPx(this.data.size)
         getCanvas('#myCanvas', size, size).then(canvas => {
           this._canvas = canvas
@@ -39,7 +38,7 @@ Page({
             qrcodeResult: input
           })
         })
-      }, 150)
+      })
     })
   },
   onReady () {
